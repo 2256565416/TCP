@@ -1,0 +1,24 @@
+﻿<Window x:Class="TcpClientWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="C# TCP 客户端 - 控制 PLC" Height="450" Width="600">
+    <Grid Margin="10">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                <TextBox x:Name="txtIP" Width="120" Text="192.168.31.200" Margin="0 0 5 0"/>
+                <TextBox x:Name="txtPort" Width="80" Text="8080" Margin="0 0 5 0"/>
+                <Button x:Name="btnConnect" Content="连接PLC" Width="80" Click="BtnConnect_Click"/>
+                <Button x:Name="btnDisconnect" Content="断开" Width="60" Click="BtnDisconnect_Click" Margin="5 0 0 0"/>
+            </StackPanel>
+
+            <TextBox x:Name="txtSend" Height="60" Margin="0 0 0 5"/>
+            <Button Content="发送到 PLC" Click="BtnSend_Click" Width="120" HorizontalAlignment="Left"/>
+
+            <Label Content="接收 PLC 数据：" Margin="0 10 0 0"/>
+            <TextBox x:Name="txtReceive" Height="100" IsReadOnly="True" TextWrapping="Wrap"/>
+
+            <Label Content="日志：" Margin="0 10 0 0"/>
+            <TextBox x:Name="txtLog" Height="80" IsReadOnly="True" TextWrapping="Wrap"/>
+        </StackPanel>
+    </Grid>
+</Window>
